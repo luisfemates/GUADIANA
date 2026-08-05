@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Límites y Continuidad</title>
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!-- JS Global (Carga automáticamente la cabecera, sidebar, footer y KaTeX) -->
+    <script defer src="../js/global.js"></script>
+</head>
+<body>
+
+    <!-- Contenedor general de 2 columnas -->
+    <div class="container">
+        
+        <!-- COLUMNA IZQUIERDA: El JS inyectará aquí el menú lateral -->
+        <div id="sidebar-container"></div>
+
+        <!-- COLUMNA DERECHA: Contenido principal de la lección -->
+        <main class="main-panel">
+            <article class="lesson-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Inicio</a> / <span>1º Bachillerato</span> / <strong>Análisis</strong>
+                </nav>
+
+                <h1 class="lesson-title">Límites de Funciones e Indeterminaciones</h1>
+
+                <p>El límite de una función $f(x)$ cuando $x$ tiende a $a$ es el valor al que se aproximan las imágenes $f(x)$ a medida que $x$ se acerca a $a$.</p>
+                
+                <div class="formula-preview">
+                    $\displaystyle \lim_{x \to a} f(x) = L$
+                </div>
+
+                <h2>Indeterminaciones Frecuentes</h2>
+                <p>Al calcular límites suelen aparecer formas indeterminadas que requieren técnicas algebraicas para ser resueltas:</p>
+                <ul>
+                    <li><strong>Indeterminación $\frac{0}{0}$:</strong> Se resuelve descomponiendo en factores los polinomios y simplificando.</li>
+                    <li><strong>Indeterminación $\frac{\infty}{\infty}$:</strong> Se resuelve dividiendo entre la mayor potencia de $x$ o comparando grados.</li>
+                </ul>
+
+                <h2>Ejercicios Resueltos</h2>
+
+                <div class="exercise-box">
+                    <p><strong>Ejercicio 1: Resuelve el siguiente límite:</strong></p>
+                    <div class="formula-preview">
+                        $\displaystyle\lim_{x \to 2} \frac{x^2 - 4}{x - 2}$
+                    </div>
+                    
+                    <details class="solution-box">
+                        <summary>Solución paso a paso</summary>
+                        <div class="solution-content">
+                            <p>Sustituyendo $x = 2$ obtenemos la indeterminación $\frac{0}{0}$. Factorizamos el numerador por diferencia de cuadrados:</p>
+                            $$x^2 - 4 = (x-2)(x+2)$$
+                            <p>Reescribimos el límite y simplificamos el factor $(x-2)$:</p>
+                            $$\lim_{x \to 2} \frac{(x-2)(x+2)}{x-2} = \lim_{x \to 2} (x+2) = 2 + 2 = 4$$
+                        </div>
+                    </details>
+                </div>
+
+            </article>
+        </main>
+
+    </div>
+
+</body>
+</html>

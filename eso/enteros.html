@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Enteros</title>
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!-- JS Global (Carga automáticamente la cabecera, sidebar, footer y KaTeX) -->
+    <script defer src="../js/global.js"></script>
+</head>
+<body>
+
+    <!-- Contenedor general de 2 columnas -->
+    <div class="container">
+        
+        <!-- COLUMNA IZQUIERDA: El JS inyectará aquí el menú lateral -->
+        <div id="sidebar-container"></div>
+
+        <!-- COLUMNA DERECHA: Contenido principal de la lección -->
+        <main class="main-panel">
+            <article class="lesson-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Inicio</a> / <span>1º y 2º ESO</span> / <strong>Álgebra</strong>
+                </nav>
+
+                <h1 class="lesson-title">Números Enteros ($\mathbb{Z}$)</h1>
+
+                <p>El conjunto de los números enteros está formado por los números naturales (positivos), el cero y los enteros negativos. Se representa mediante el símbolo $\mathbb{Z}$:</p>
+                
+                <div class="formula-preview">
+                    $\mathbb{Z} = \{ \dots, -3, -2, -1, 0, 1, 2, 3, \dots \}$
+                </div>
+
+                <h2>Regla de los Signos</h2>
+                <p>Al multiplicar o dividir dos números enteros, aplicamos la regla de los signos:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operación</th>
+                            <th>Signo Resultado</th>
+                            <th>Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$(+) \cdot (+)$ ó $(+) : (+)$</td>
+                            <td>$+$ (Positivo)</td>
+                            <td>$(+4) \cdot (+2) = +8$</td>
+                        </tr>
+                        <tr>
+                            <td>$(-) \cdot (-)$ ó $(-)$ : $(-)$</td>
+                            <td>$+$ (Positivo)</td>
+                            <td>$(-5) \cdot (-3) = +15$</td>
+                        </tr>
+                        <tr>
+                            <td>$(+) \cdot (-)$ ó $(+) : (-)$</td>
+                            <td>$-$ (Negativo)</td>
+                            <td>$(+6) \cdot (-2) = -12$</td>
+                        </tr>
+                        <tr>
+                            <td>$(-) \cdot (+)$ ó $(-)$ : $(+)$</td>
+                            <td>$-$ (Negativo)</td>
+                            <td>$(-8) : (+4) = -2$</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="math-box">
+                    <h3>Jerarquía de las Operaciones</h3>
+                    <p>Al resolver operaciones combinadas, sigue siempre este orden estricto:</p>
+                    <ol>
+                        <li>Paréntesis y corchetes (de dentro hacia afuera).</li>
+                        <li>Multiplicaciones y divisiones (de izquierda a derecha).</li>
+                        <li>Sumas y restas (de izquierda a derecha).</li>
+                    </ol>
+                </div>
+
+                <h2>Ejercicios Resueltos</h2>
+
+                <div class="exercise-box">
+                    <p><strong>Ejercicio 1: Resuelve la siguiente operación combinada con enteros.</strong></p>
+                    <div class="formula-preview">
+                        $-6 + 2 \cdot (-3) - (-12) : 4$
+                    </div>
+                    
+                    <details class="solution-box">
+                        <summary>Solución paso a paso</summary>
+                        <div class="solution-content">
+                            <p>1. Resolvemos primero las multiplicaciones y divisiones:</p>
+                            <ul>
+                                <li>$2 \cdot (-3) = -6$</li>
+                                <li>$(-12) : 4 = -3$</li>
+                            </ul>
+                            <p>2. Sustituimos los resultados en la expresión:</p>
+                            $$-6 + (-6) - (-3)$$
+                            <p>3. Eliminamos los paréntesis según la regla de los signos:</p>
+                            $$-6 - 6 + 3$$
+                            <p>4. Operamos de izquierda a derecha:</p>
+                            $$-12 + 3 = -9$$
+                            <div class="math-box">
+                                <p><strong>Resultado final:</strong> $-9$</p>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+            </article>
+        </main>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derivadas y Reglas</title>
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!-- JS Global (Carga automáticamente la cabecera, sidebar, footer y KaTeX) -->
+    <script defer src="../js/global.js"></script>
+</head>
+<body>
+
+    <!-- Contenedor general de 2 columnas -->
+    <div class="container">
+        
+        <!-- COLUMNA IZQUIERDA: El JS inyectará aquí tu menú lateral personalizado -->
+        <div id="sidebar-container"></div>
+
+        <!-- COLUMNA DERECHA: Contenido de la lección -->
+        <main class="main-panel">
+            <article class="lesson-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Inicio</a> / <span>1º Bachillerato</span> / <strong>Cálculo Diferencial</strong>
+                </nav>
+
+                <h1 class="lesson-title">Derivadas: Concepto y Reglas Básicas</h1>
+
+                <p>La derivada de una función mide la rapidez con la que cambia el valor de dicha función, según cambie el valor de su variable independiente. Es la base fundamental del cálculo diferencial.</p>
+
+                <h2>Interpretaciones de la Derivada</h2>
+                
+                <ul>
+                    <li><strong>Geométrica:</strong> Es la pendiente de la recta tangente a la curva de la función en un punto dado.</li>
+                    <li><strong>Física:</strong> Representa la tasa de variación instantánea (por ejemplo, la velocidad es la derivada de la posición respecto al tiempo).</li>
+                    <li><strong>Económica:</strong> Se utiliza frecuentemente para calcular el coste marginal o el beneficio marginal.</li>
+                </ul>
+
+                <div class="math-box">
+                    <h3>Definición formal por Límite</h3>
+                    <p>La derivada de una función $f(x)$ en un punto $x$ se define mediante el siguiente límite, siempre que este exista:</p>
+                    $$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$
+                </div>
+
+                <h2>Tabla de Derivadas Básicas</h2>
+                <p>Para agilizar los cálculos y no tener que usar el límite cada vez, utilizamos las reglas de derivación elemental:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo de Función</th>
+                            <th>Función $f(x)$</th>
+                            <th>Derivada $f'(x)$</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Constante</td>
+                            <td>$k$ (donde $k \in \mathbb{R}$)</td>
+                            <td>$0$</td>
+                        </tr>
+                        <tr>
+                            <td>Potencial</td>
+                            <td>$x^n$</td>
+                            <td>$n \cdot x^{n-1}$</td>
+                        </tr>
+                        <tr>
+                            <td>Exponencial</td>
+                            <td>$e^x$</td>
+                            <td>$e^x$</td>
+                        </tr>
+                        <tr>
+                            <td>Logarítmica</td>
+                            <td>$\ln(x)$</td>
+                            <td>$\frac{1}{x}$</td>
+                        </tr>
+                        <tr>
+                            <td>Trigonométrica</td>
+                            <td>$\sin(x)$</td>
+                            <td>$\cos(x)$</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Ejemplo Resuelto</h2>
+                <div class="exercise-box">
+                    <p><strong>Calcula la derivada de la siguiente función polinómica:</strong></p>
+                    <div class="formula-preview">
+                        $f(x) = 5x^3 - 4x^2 + 7x - 2$
+                    </div>
+                    
+                    <details class="solution-box">
+                        <summary>Solución paso a paso</summary>
+                        <div class="solution-content">
+                            <p>Para resolver esta derivada, aplicamos la propiedad de linealidad (derivamos término a término) y la regla de la potencia:</p>
+                            <ul>
+                                <li>La derivada de $5x^3$ es $5 \cdot 3x^2 = 15x^2$</li>
+                                <li>La derivada de $-4x^2$ es $-4 \cdot 2x = -8x$</li>
+                                <li>La derivada de $7x$ es simplemente $7$</li>
+                                <li>La derivada de la constante $-2$ es $0$</li>
+                            </ul>
+                            <p>Por lo tanto, agrupando todos los términos, el resultado final es:</p>
+                            <div class="math-box">
+                                $$f'(x) = 15x^2 - 8x + 7$$
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </article>
+        </main>
+    </div>
+
+</body>
+</html>

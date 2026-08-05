@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integrales Definidas</title>
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!-- JS Global (Carga automáticamente la cabecera, sidebar, footer y KaTeX) -->
+    <script defer src="../js/global.js"></script>
+</head>
+<body>
+
+    <!-- Contenedor general de 2 columnas -->
+    <div class="container">
+        
+        <!-- COLUMNA IZQUIERDA: El JS inyectará aquí el menú lateral -->
+        <div id="sidebar-container"></div>
+
+        <!-- COLUMNA DERECHA: Contenido principal de la lección -->
+        <main class="main-panel">
+            <article class="lesson-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Inicio</a> / <span>2º Bachillerato</span> / <strong>Cálculo Integral</strong>
+                </nav>
+
+                <h1 class="lesson-title">Integrales Definidas y Regla de Barrow</h1>
+
+                <p>La integral definida de una función continua $f(x)$ en el intervalo $[a, b]$ nos permite calcular el área encerrada bajo su curva.</p>
+
+                <div class="math-box">
+                    <h3>Regla de Barrow</h3>
+                    <p>Si $F(x)$ es una primitiva de $f(x)$, se cumple que:</p>
+                    $$\int_{a}^{b} f(x) \, dx = [F(x)]_a^b = F(b) - F(a)$$
+                </div>
+
+                <h2>Ejemplo Resuelto</h2>
+                <div class="exercise-box">
+                    <p><strong>Calcular el área delimitada por la función $f(x) = 2x + 1$ entre $x = 1$ y $x = 3$:</strong></p>
+                    $$\int_{1}^{3} (2x + 1) \, dx$$
+                    
+                    <p><strong>Paso 1:</strong> Hallar la primitiva.</p>
+                    $$F(x) = x^2 + x$$
+
+                    <p><strong>Paso 2:</strong> Aplicar los límites de integración.</p>
+                    $$F(3) = 3^2 + 3 = 12$$
+                    $$F(1) = 1^2 + 1 = 2$$
+                    $$\int_{1}^{3} (2x + 1) \, dx = 12 - 2 = 10$$
+                </div>
+            </article>
+        </main>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Áreas y Perímetros de Figuras Planas</title>
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!-- JS Global (Carga automáticamente cabecera, sidebar, footer y KaTeX) -->
+    <script defer src="../js/global.js"></script>
+
+    <!-- Cargador Oficial de GeoGebra (Ligero y Responsive) -->
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+</head>
+<body>
+
+    <!-- Contenedor general de 2 columnas -->
+    <div class="container">
+        
+        <!-- COLUMNA IZQUIERDA: El JS inyectará aquí el menú lateral -->
+        <div id="sidebar-container"></div>
+
+        <!-- COLUMNA DERECHA: Contenido principal de la lección -->
+        <main class="main-panel">
+            <article class="lesson-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Inicio</a> / <span>1º-2º ESO</span> / <strong>Geometría</strong>
+                </nav>
+
+                <h1 class="lesson-title">Áreas y Perímetros de Figuras Planas</h1>
+
+                <p>La geometría plana estudia las figuras bidimensionales a través de dos magnitudes fundamentales: el <strong>perímetro</strong> (la longitud del contorno) y el <strong>área</strong> (la medida de la superficie encerrada).</p>
+                
+                <div class="formula-preview">
+                    $P = \sum \text{Lados} \quad \Big| \quad A = \text{Superficie interior}$
+                </div>
+
+                <!-- SECCIÓN GEOGEBRA INTERACTIVO -->
+                <h2>Explorador Interactivo de Geometría</h2>
+                <p>Arrastra los puntos en la construcción inferior para modificar la figura y comprobar cómo cambian sus dimensiones en tiempo real:</p>
+
+                <div class="math-box" style="padding: 1rem; text-align: center; background: #ffffff;">
+                    <!-- Contenedor donde se dibuja GeoGebra -->
+                    <div id="ggb-element" style="width: 100%; max-width: 750px; margin: 0 auto; min-height: 400px;"></div>
+                </div>
+
+                <script>
+                    // Configuración del Applet de GeoGebra
+                    var ggbApp = new GGBApplet({
+                        "appName": "geometry",
+                        "width": 750,
+                        "height": 400,
+                        "showToolBar": false,
+                        "showAlgebraInput": false,
+                        "showMenuBar": false,
+                        "material_id": "vgZXSwuP" // ID de applet interactivo de áreas en GeoGebra
+                    }, true);
+
+                    // Renderizar cuando cargue la página
+                    window.addEventListener("DOMContentLoaded", function() {
+                        ggbApp.inject('ggb-element');
+                    });
+                </script>
+
+                <h2>Diferencias Clave entre Perímetro y Área</h2>
+                <ul>
+                    <li><strong>Perímetro ($P$):</strong> Dimensión lineal ($1\text{D}$). Mide la longitud total del borde que delimita una figura. Sus unidades son centímetros ($\text{cm}$), metros ($\text{m}$), etc.</li>
+                    <li><strong>Área ($A$):</strong> Dimensión bidimensional ($2\text{D}$). Mide la cantidad de unidades cuadradas que caben dentro del recinto plano. Sus unidades son $\text{cm}^2$, $\text{m}^2$, etc.</li>
+                </ul>
+
+                <div class="math-box">
+                    <h3>Herramienta Auxiliar: El Teorema de Pitágoras en Geometría</h3>
+                    <p>En multitud de figuras planas (triángulos, rombos, trapecios, polígonos regulares), para encontrar la altura, la apotema o un lado inclinado desconocido, aplicamos el Teorema de Pitágoras en los triángulos rectángulos internos:</p>
+                    $$a^2 + b^2 = c^2 \implies c = \sqrt{a^2 + b^2}$$
+                </div>
+
+                <h2>Formulario de Figuras Geométricas</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Figura</th>
+                            <th>Esquema / Elementos</th>
+                            <th>Fórmula de Perímetro ($P$)</th>
+                            <th>Fórmula de Área ($A$)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Triángulo</strong></td>
+                            <td>Base ($b$), Altura ($h$), Lados ($a, b, c$)</td>
+                            <td>$P = a + b + c$</td>
+                            <td>$A = \frac{b \cdot h}{2}$</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cuadrado</strong></td>
+                            <td>Lado ($l$)</td>
+                            <td>$P = 4l$</td>
+                            <td>$A = l^2$</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rectángulo</strong></td>
+                            <td>Base ($b$), Altura ($h$)</td>
+                            <td>$P = 2b + 2h$</td>
+                            <td>$A = b \cdot h$</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rombo</strong></td>
+                            <td>Diagonal mayor ($D$), Diagonal menor ($d$), Lado ($l$)</td>
+                            <td>$P = 4l$</td>
+                            <td>$A = \frac{D \cdot d}{2}$</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Trapecio</strong></td>
+                            <td>Base mayor ($B$), Base menor ($b$), Altura ($h$)</td>
+                            <td>$P = B + b + l_1 + l_2$</td>
+                            <td>$A = \frac{(B + b) \cdot h}{2}$</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Polígono Regular</strong></td>
+                            <td>Nº de lados ($n$), Lado ($l$), Apotema ($a_p$)</td>
+                            <td>$P = n \cdot l$</td>
+                            <td>$A = \frac{P \cdot a_p}{2}$</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Círculo</strong></td>
+                            <td>Radio ($r$), Diámetro ($d = 2r$)</td>
+                            <td>$P = 2\pi r$ (Longitud)</td>
+                            <td>$A = \pi r^2$</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Ejercicios Resueltos</h2>
+
+                <div class="exercise-box">
+                    <p><strong>Ejercicio 1: Calcula el área y el perímetro de un rombo cuyas diagonales miden $D = 8\text{ cm}$ y $d = 6\text{ cm}$.</strong></p>
+                    
+                    <!-- DIAGRAMA VECTORIAL SVG ILUSTRATIVO DEL ROMBO -->
+                    <div style="text-align: center; margin: 1.5rem 0;">
+                        <svg width="240" height="180" viewBox="0 0 240 180" style="background: #f8fafc; border-radius: 12px; border: 1px solid #dbe3f0;">
+                            <!-- Triángulo rectángulo sombreado para Pitágoras -->
+                            <polygon points="120,20 200,90 120,90" fill="rgba(99, 102, 241, 0.2)" stroke="#6366f1" stroke-dasharray="3,3" stroke-width="1.5"/>
+                            
+                            <!-- Rombo completo -->
+                            <polygon points="120,20 200,90 120,160 40,90" fill="none" stroke="#3a5ccc" stroke-width="3"/>
+                            
+                            <!-- Diagonales -->
+                            <line x1="120" y1="20" x2="120" y2="160" stroke="#ec4899" stroke-width="2" stroke-dasharray="4"/>
+                            <line x1="40" y1="90" x2="200" y2="90" stroke="#0d9488" stroke-width="2" stroke-dasharray="4"/>
+                            
+                            <!-- Etiquetas -->
+                            <text x="125" y="60" fill="#ec4899" font-size="12" font-weight="bold">D/2 = 4</text>
+                            <text x="150" y="105" fill="#0d9488" font-size="12" font-weight="bold">d/2 = 3</text>
+                            <text x="168" y="50" fill="#3a5ccc" font-size="13" font-weight="bold">l = ?</text>
+                        </svg>
+                    </div>
+
+                    <div class="formula-preview">
+                        $D = 8\text{ cm}, \quad d = 6\text{ cm}$
+                    </div>
+                    
+                    <details class="solution-box">
+                        <summary>Solución paso a paso</summary>
+                        <div class="solution-content">
+                            <p><strong>Paso 1: Cálculo del área.</strong> Aplicamos directamente la fórmula con las diagonales:</p>
+                            $$A = \frac{D \cdot d}{2} = \frac{8 \cdot 6}{2} = \frac{48}{2} = 24\text{ cm}^2$$
+
+                            <p><strong>Paso 2: Cálculo del lado ($l$) con el Teorema de Pitágoras.</strong> Las diagonales de un rombo se cortan en su punto medio formando 4 triángulos rectángulos (observa la región sombreada en el esquema):</p>
+                            <ul>
+                                <li>Cateto 1 (mitad de $D$): $\frac{8}{2} = 4\text{ cm}$</li>
+                                <li>Cateto 2 (mitad de $d$): $\frac{6}{2} = 3\text{ cm}$</li>
+                            </ul>
+                            
+                            $$l = \sqrt{4^2 + 3^2} = \sqrt{16 + 9} = \sqrt{25} = 5\text{ cm}$$
+
+                            <p><strong>Paso 3: Cálculo del perímetro.</strong> Como el rombo tiene 4 lados iguales:</p>
+                            $$P = 4 \cdot l = 4 \cdot 5 = 20\text{ cm}$$
+
+                            <div class="math-box">
+                                <p><strong>Resultados finales:</strong> Área $= 24\text{ cm}^2$ y Perímetro $= 20\text{ cm}$.</p>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="exercise-box">
+                    <p><strong>Ejercicio 2: Halla el área de la región sombreada comprendida entre un cuadrado de $10\text{ cm}$ de lado y un círculo inscrito en su interior.</strong></p>
+
+                    <!-- DIAGRAMA VECTORIAL SVG CIRCULO INSCRITO EN CUADRADO -->
+                    <div style="text-align: center; margin: 1.5rem 0;">
+                        <svg width="180" height="180" viewBox="0 0 180 180" style="background: #f8fafc; border-radius: 12px; border: 1px solid #dbe3f0;">
+                            <!-- Cuadrado exterior -->
+                            <rect x="20" y="20" width="140" height="140" fill="#fff7ed" stroke="#f97316" stroke-width="2.5"/>
+                            
+                            <!-- Círculo inscrito -->
+                            <circle cx="90" cy="90" r="70" fill="#eef2ff" stroke="#3a5ccc" stroke-width="2.5"/>
+                            
+                            <!-- Cotas de radio y lado -->
+                            <line x1="90" y1="90" x2="160" y2="90" stroke="#3a5ccc" stroke-width="2" stroke-dasharray="3"/>
+                            <text x="115" y="83" fill="#3a5ccc" font-size="12" font-weight="bold">r = 5 cm</text>
+                            
+                            <text x="70" y="175" fill="#f97316" font-size="12" font-weight="bold">l = 10 cm</text>
+                        </svg>
+                    </div>
+
+                    <div class="formula-preview">
+                        $A_{\text{sombreada}} = A_{\text{cuadrado}} - A_{\text{círculo}}$
+                    </div>
+                    
+                    <details class="solution-box">
+                        <summary>Solución paso a paso</summary>
+                        <div class="solution-content">
+                            <p><strong>Paso 1: Área del cuadrado exterior.</strong></p>
+                            $$A_{\text{cuadrado}} = l^2 = 10^2 = 100\text{ cm}^2$$
+
+                            <p><strong>Paso 2: Área del círculo inscrito.</strong> Al estar el círculo perfectamente inscrito dentro del cuadrado, su diámetro equivale al lado del cuadrado ($d = 10\text{ cm}$), por lo que su radio es $r = 5\text{ cm}$:</p>
+                            $$A_{\text{círculo}} = \pi \cdot r^2 = \pi \cdot 5^2 = 25\pi \approx 78.54\text{ cm}^2$$
+
+                            <p><strong>Paso 3: Resta de superficies.</strong> Restamos el área del círculo al área total del cuadrado:</p>
+                            $$A_{\text{sombreada}} = 100 - 78.54 = 21.46\text{ cm}^2$$
+
+                            <div class="math-box">
+                                <p><strong>Solución:</strong> El área de la región sombreada es de $21.46\text{ cm}^2$.</p>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+            </article>
+        </main>
+
+    </div>
+
+</body>
+</html>

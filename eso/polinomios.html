@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polinomios</title>
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!-- JS Global (Carga automáticamente la cabecera, sidebar, footer y KaTeX) -->
+    <script defer src="../js/global.js"></script>
+</head>
+<body>
+
+    <!-- Contenedor general de 2 columnas -->
+    <div class="container">
+        
+        <!-- COLUMNA IZQUIERDA: El JS inyectará aquí el menú lateral -->
+        <div id="sidebar-container"></div>
+
+        <!-- COLUMNA DERECHA: Contenido principal de la lección -->
+        <main class="main-panel">
+            <article class="lesson-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Inicio</a> / <span>3º y 4º ESO</span> / <strong>Álgebra</strong>
+                </nav>
+
+                <h1 class="lesson-title">Polinomios e Identidades Notables</h1>
+
+                <p>Un polinomio es una expresión algebraica formada por la suma de varios monomios. Su grado es el mayor exponente al que se encuentra elevada la variable $x$.</p>
+
+                <div class="math-box">
+                    <h3>Identidades Notables Básicas</h3>
+                    <p>Son productos algebraicos de uso recurrente que debemos memorizar:</p>
+                    <ul>
+                        <li><strong>Cuadrado de una suma:</strong> $(a + b)^2 = a^2 + 2ab + b^2$</li>
+                        <li><strong>Cuadrado de una diferencia:</strong> $(a - b)^2 = a^2 - 2ab + b^2$</li>
+                        <li><strong>Suma por diferencia:</strong> $(a + b)(a - b) = a^2 - b^2$</li>
+                    </ul>
+                </div>
+
+                <h2>Operaciones Básicas</h2>
+                <ul>
+                    <li><strong>Suma y resta:</strong> Se reducen únicamente los monomios semejantes (los que tienen el mismo exponente).</li>
+                    <li><strong>Multiplicación:</strong> Se multiplica cada término del primer polinomio por todos los términos del segundo.</li>
+                    <li><strong>Factor común:</strong> Consiste en extraer la variable o número compartido de menor exponente.</li>
+                </ul>
+
+                <h2>Ejercicios Resueltos</h2>
+
+                <div class="exercise-box">
+                    <p><strong>Ejercicio 1: Desarrolla y simplifica aplicando identidades notables.</strong></p>
+                    <div class="formula-preview">
+                        $(2x + 3)^2 - (2x + 3)(2x - 3)$
+                    </div>
+                    
+                    <details class="solution-box">
+                        <summary>Solución paso a paso</summary>
+                        <div class="solution-content">
+                            <p>1. Aplicamos el cuadrado de una suma al primer término:</p>
+                            $$(2x + 3)^2 = (2x)^2 + 2(2x)(3) + 3^2 = 4x^2 + 12x + 9$$
+                            <p>2. Aplicamos suma por diferencia al segundo término:</p>
+                            $$(2x + 3)(2x - 3) = (2x)^2 - 3^2 = 4x^2 - 9$$
+                            <p>3. Restamos ambas expresiones (atención con el signo menos delante del paréntesis):</p>
+                            $$(4x^2 + 12x + 9) - (4x^2 - 9) = 4x^2 + 12x + 9 - 4x^2 + 9$$
+                            <p>4. Agrupamos términos semejantes:</p>
+                            $$12x + 18$$
+                        </div>
+                    </details>
+                </div>
+
+            </article>
+        </main>
+
+    </div>
+
+</body>
+</html>

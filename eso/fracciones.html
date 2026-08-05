@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fracciones y Decimales</title>
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!-- JS Global (Carga automáticamente la cabecera, sidebar, footer y KaTeX) -->
+    <script defer src="../js/global.js"></script>
+</head>
+<body>
+
+    <!-- Contenedor general de 2 columnas -->
+    <div class="container">
+        
+        <!-- COLUMNA IZQUIERDA: El JS inyectará aquí el menú lateral -->
+        <div id="sidebar-container"></div>
+
+        <!-- COLUMNA DERECHA: Contenido principal de la lección -->
+        <main class="main-panel">
+            <article class="lesson-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Inicio</a> / <span>1º y 2º ESO</span> / <strong>Álgebra</strong>
+                </nav>
+
+                <h1 class="lesson-title">Fracciones y Números Decimales</h1>
+
+                <p>Una fracción representa la división de un todo en partes iguales. Se expresa como $\frac{a}{b}$, donde $a$ es el <strong>numerador</strong> y $b$ es el <strong>denominador</strong> ($b \neq 0$).</p>
+
+                <div class="math-box">
+                    <h3>Operaciones con Fracciones</h3>
+                    <ul>
+                        <li><strong>Suma y resta con igual denominador:</strong> $\frac{a}{c} \pm \frac{b}{c} = \frac{a \pm b}{c}$</li>
+                        <li><strong>Suma y resta con distinto denominador:</strong> Se reducen previamente a común denominador mediante el m.c.m.</li>
+                        <li><strong>Multiplicación (en línea):</strong> $\frac{a}{b} \cdot \frac{c}{d} = \frac{a \cdot c}{b \cdot d}$</li>
+                        <li><strong>División (en cruz):</strong> $\frac{a}{b} : \frac{c}{d} = \frac{a \cdot d}{b \cdot c}$</li>
+                    </ul>
+                </div>
+
+                <h2>Clasificación de Decimales</h2>
+                <p>Al dividir el numerador entre el denominador de una fracción, podemos obtener:</p>
+                <ol>
+                    <li><strong>Decimal exacto:</strong> Tiene un número finito de cifras decimales (ejemplo: $\frac{3}{4} = 0.75$).</li>
+                    <li><strong>Decimal periódico puro:</strong> El periodo empieza justo después de la coma (ejemplo: $\frac{1}{3} = 0.333\dots = 0.\bar{3}$).</li>
+                    <li><strong>Decimal periódico mixto:</strong> Hay cifras entre la coma y el periodo (ejemplo: $\frac{7}{6} = 1.1666\dots = 1.1\bar{6}$).</li>
+                </ol>
+
+                <h2>Ejercicios Resueltos</h2>
+
+                <div class="exercise-box">
+                    <p><strong>Ejercicio 1: Operaciones combinadas con fracciones.</strong></p>
+                    <div class="formula-preview">
+                        $\frac{3}{4} - \frac{1}{2} \cdot \left( \frac{5}{3} - 1 \right)$
+                    </div>
+                    
+                    <details class="solution-box">
+                        <summary>Solución paso a paso</summary>
+                        <div class="solution-content">
+                            <p>1. Operamos dentro del paréntesis:</p>
+                            $$\frac{5}{3} - 1 = \frac{5}{3} - \frac{3}{3} = \frac{2}{3}$$
+                            <p>2. Multiplicamos la fracción resultante:</p>
+                            $$\frac{1}{2} \cdot \frac{2}{3} = \frac{2}{6} = \frac{1}{3}$$
+                            <p>3. Restamos las fracciones buscando denominador común ($\text{m.c.m.}(4, 3) = 12$):</p>
+                            $$\frac{3}{4} - \frac{1}{3} = \frac{9}{12} - \frac{4}{12} = \frac{5}{12}$$
+                        </div>
+                    </details>
+                </div>
+
+            </article>
+        </main>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matemáticas | Luis Felipe</title>
+
+    <!-- Fuente Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="./css/estilos.css">
+
+    <!-- JS Global (Inyecta Cabecera, Sidebar, Footer y KaTeX) -->
+    <script defer src="./js/global.js"></script>
+</head>
+<body>
+
+    <!-- CUERPO PRINCIPAL DE LA PORTADA -->
+    <div class="container">
+
+        <!-- COLUMNA IZQUIERDA: El JS inyecta aquí la barra lateral automáticamente -->
+        <div id="sidebar-container"></div>
+
+        <!-- COLUMNA DERECHA: TABLÓN Y DESTACADOS -->
+        <main class="main-panel">
+
+            <!-- TABLÓN DE ANUNCIOS -->
+            <div class="notice-board">
+                <div class="notice-icon">📌</div>
+                <div class="notice-content">
+                    <h2>Aviso del Departamento</h2>
+                    <p>Bienvenido al aula virtual. Explora las lecciones desde el menú lateral o accede directamente a los temas destacados.</p>
+                </div>
+            </div>
+
+            <!-- BLOQUE DE NOVEDADES Y ACCESOS RÁPIDOS -->
+            <section class="section-box">
+                <div class="section-header">
+                    <h2 class="section-title">✨ Últimas Novedades</h2>
+                </div>
+
+                <div class="cards-grid">
+
+                    <!-- Tarjeta 1 -->
+                    <a href="bach/integrales.html" class="edu-card">
+                        <div>
+                            <div class="card-top">
+                                <span class="badge-level level-bach">2º Bachillerato</span>
+                                <span class="time-read">⏱ 15 min</span>
+                            </div>
+                            <h3>Integrales Definidas</h3>
+                            <p>Cálculo de áreas mediante la regla de Barrow:</p>
+                            <div class="formula-preview">
+                                $$\int_a^b f(x) \, dx = F(b) - F(a)$$
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span>Abrir lección</span>
+                            <span>→</span>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta 2 -->
+                    <a href="eso/ecuaciones.html" class="edu-card">
+                        <div>
+                            <div class="card-top">
+                                <span class="badge-level level-eso">3º y 4º ESO</span>
+                                <span class="time-read">⏱ 10 min</span>
+                            </div>
+                            <h3>Ecuaciones de 2º Grado</h3>
+                            <p>Resolución de expresiones de la forma $$ax^2 + bx + c = 0$$</p>
+                            <div class="formula-preview">
+                                $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span>Abrir lección</span>
+                            <span>→</span>
+                        </div>
+                    </a>
+
+                    <!-- Tarjeta 3 -->
+                    <a href="bach/derivadas.html" class="edu-card">
+                        <div>
+                            <div class="card-top">
+                                <span class="badge-level level-bach">1º Bachillerato</span>
+                                <span class="time-read">⏱ 12 min</span>
+                            </div>
+                            <h3>Definición de Derivada</h3>
+                            <p>Cálculo del límite del incremento en un punto $x_0$:</p>
+                            <div class="formula-preview">
+                                $$f'(x_0) = \lim_{h \to 0} \frac{f(x_0+h) - f(x_0)}{h}$$
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span>Abrir lección</span>
+                            <span>→</span>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos de Examen | MathAula</title>
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!-- JS Global (Carga automáticamente la cabecera, sidebar, footer y KaTeX) -->
+    <script defer src="../js/global.js"></script>
+</head>
+<body>
+
+    <!-- Contenedor general de 2 columnas -->
+    <div class="container">
+        
+        <!-- COLUMNA IZQUIERDA: El JS inyectará aquí el menú lateral -->
+        <div id="sidebar-container"></div>
+
+        <!-- COLUMNA DERECHA: Contenido principal de la lección -->
+        <main class="main-panel">
+            <article class="lesson-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Inicio</a> / <span>Extra</span> / <strong>Exámenes Resueltos</strong>
+                </nav>
+
+                <h1 class="lesson-title">Modelos de Examen Resueltos</h1>
+
+                <p>Modelos de examen típicos de prueba de evaluación para practicar los contenidos vistos durante el curso.</p>
+
+                <div class="exercise-box">
+                    <p><strong>Problema Tipo PAU: Calcula el valor de $a$ para que la función $f(x)$ sea continua en $x = 1$:</strong></p>
+                    <div class="formula-preview">
+                        $f(x) = \begin{cases} x^2 + a & \text{si } x < 1 \\ 3x - 1 & \text{si } x \ge 1 \end{cases}$
+                    </div>
+                    
+                    <details class="solution-box">
+                        <summary>Solución paso a paso</summary>
+                        <div class="solution-content">
+                            <p>Para que la función sea continua en $x = 1$, los límites laterales deben ser iguales e iguales a $f(1)$:</p>
+                            <ul>
+                                <li>Límite por la izquierda: $\lim_{x \to 1^-} (x^2 + a) = 1 + a$</li>
+                                <li>Límite por la derecha: $\lim_{x \to 1^+} (3x - 1) = 3(1) - 1 = 2$</li>
+                            </ul>
+                            <p>Igualamos ambos límites laterales:</p>
+                            $$1 + a = 2 \implies a = 1$$
+                        </div>
+                    </details>
+                </div>
+
+            </article>
+        </main>
+
+    </div>
+
+</body>
+</html>

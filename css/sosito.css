@@ -1,0 +1,395 @@
+:root {
+    /* Paleta Moderna, Elegante y Formal (High-Contrast Light Mode) */
+    --bg-page: #f8fafc;          /* Gris glaciar muy claro, limpio y técnico */
+    --surface: #ffffff;          /* Blanco puro para máximo contraste y formalidad */
+    --surface-alt: #f1f5f9;      /* Gris perla secundario para separación sutil */
+    
+    --text-main: #0f172a;        /* Azul pizarra casi negro (lectura formal y nítida) */
+    --text-muted: #64748b;       /* Gris pizarra claro para jerarquía visual */
+    
+    --math-blue: #1e3a8a;        /* Azul cobalto profundo (formalidad académica) */
+    --math-blue-soft: #eff6ff;   /* Fondo azul técnico */
+    --math-accent: #2563eb;      /* Azul eléctrico para impacto visual y llamadas a la acción */
+    
+    --amber-warm: #b45309;       /* Cobre elegante para avisos */
+    --amber-soft: #fffbeb;       /* Marfil premium */
+    
+    --purple-bach: #0f766e;      /* Cerceta/Teal oscuro para contraste secundario */
+    --purple-soft: #f0fdfa;      /* Fondo menta cristalino */
+    
+    --border: #e2e8f0;           /* Bordes definidos y modernos */
+    --radius-lg: 16px;           /* Curvas amplias estilo App moderna */
+    --radius-md: 8px;            /* Curvas precisas para elementos interiores */
+    
+    /* Sombras cristalinas (estilo Glass/Modern UI) */
+    --shadow-card: 0 4px 6px -1px rgba(15, 23, 42, 0.03), 0 2px 4px -2px rgba(15, 23, 42, 0.03);
+    --shadow-hover: 0 20px 25px -5px rgba(37, 99, 235, 0.08), 0 8px 10px -6px rgba(37, 99, 235, 0.04);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    /* Tipografía geométrica y limpia para matemáticas */
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    min-height: 100vh;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- CABECERA ESTILO PREMIUM --- */
+.header-education {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px); /* Efecto cristal moderno */
+    border-bottom: 1px solid var(--border);
+}
+
+.top-bar {
+    background-color: #0f172a; /* Pizarra oscuro premium */
+    color: #cbd5e1;
+    font-size: 0.75rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.top-bar-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #10b981; /* Verde esmeralda vibrante */
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+}
+
+.top-links { display: flex; gap: 1.5rem; }
+.top-links a { color: #cbd5e1; text-decoration: none; transition: color 0.2s ease; }
+.top-links a:hover { color: #ffffff; }
+
+.main-header { padding: 1rem 1.5rem; }
+.header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: inherit;
+    flex-shrink: 0;
+}
+
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--math-blue), var(--math-accent));
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 800;
+    box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
+}
+
+.brand-name {
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    letter-spacing: -0.03em;
+    color: var(--text-main);
+}
+
+.brand-tag {
+    font-size: 0.65rem;
+    background-color: var(--math-blue-soft);
+    color: var(--math-accent);
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px; /* Estilo píldora moderna */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.brand-sub { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+
+.header-actions { display: flex; align-items: center; gap: 1rem; flex-shrink: 0; }
+.btn-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-outline { 
+    background-color: transparent; 
+    border: 1px solid var(--border); 
+    color: var(--text-main); 
+}
+.btn-outline:hover { 
+    background-color: var(--surface-alt);
+    border-color: #cbd5e1;
+}
+.btn-fill { 
+    background: linear-gradient(to right, var(--math-accent), var(--math-blue));
+    border: none;
+    color: white; 
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+.btn-fill:hover { 
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3); 
+}
+
+/* --- ESTRUCTURA PRINCIPAL --- */
+.container {
+    max-width: 1280px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2.5rem;
+}
+
+.sidebar {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+    height: fit-content;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-main);
+}
+
+.menu-group { margin-bottom: 1rem; }
+details {
+    border: 1px solid transparent;
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+details[open] { 
+    border-color: var(--border); 
+    background: var(--surface-alt);
+}
+summary {
+    padding: 0.85rem 1rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    border-radius: var(--radius-md);
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "›"; font-size: 1.2rem; color: var(--text-muted); transition: transform 0.3s ease; }
+details[open] summary::after { transform: rotate(90deg); color: var(--math-accent); }
+summary:hover { background-color: var(--surface-alt); color: var(--math-accent); }
+
+.topic-links {
+    list-style: none;
+    padding: 0.25rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.topic-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.6rem 0.75rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+.topic-links a:hover { 
+    background-color: var(--surface); 
+    color: var(--math-accent); 
+    transform: translateX(4px); /* Micro-interacción elegante */
+}
+
+.tag-micro { font-size: 0.65rem; padding: 0.2rem 0.5rem; border-radius: 999px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;}
+.tag-alg { background: #fdf2f8; color: #db2777; border: 1px solid #fbcfe8; }
+.tag-geo { background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; }
+.tag-ana { background: #fffbeb; color: #d97706; border: 1px solid #fde68a; }
+
+.main-panel { display: flex; flex-direction: column; gap: 2rem; }
+
+.notice-board {
+    background: linear-gradient(to right, var(--amber-soft), #ffffff);
+    border: 1px solid #fde68a;
+    border-left: 4px solid var(--amber-warm);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+    box-shadow: var(--shadow-card);
+}
+.notice-icon { font-size: 1.5rem; background: white; padding: 0.5rem; border-radius: 12px; line-height: 1; box-shadow: 0 4px 6px rgba(217, 119, 6, 0.1); }
+.notice-content h2 { font-size: 1.1rem; font-weight: 700; color: #92400e; margin-bottom: 0.25rem; }
+.notice-content p { font-size: 0.95rem; color: #b45309; }
+
+.section-box {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+}
+.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+.section-title { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; color: var(--text-main); }
+
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+.edu-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+/* Acento superior en la tarjeta */
+.edu-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--math-accent), var(--math-blue));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.edu-card:hover { 
+    transform: translateY(-4px); 
+    border-color: transparent; 
+    box-shadow: var(--shadow-hover); 
+}
+.edu-card:hover::before { opacity: 1; }
+
+.card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+.badge-level { font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em; }
+.level-eso { background-color: var(--math-blue-soft); color: var(--math-accent); }
+.level-bach { background-color: var(--purple-soft); color: var(--purple-bach); }
+.time-read { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; display: flex; align-items: center; gap: 0.25rem; }
+
+.edu-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.4; letter-spacing: -0.01em; }
+.edu-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+/* Visualización técnica de fórmulas */
+.formula-preview { 
+    background: #f8fafc; 
+    border: 1px solid #e2e8f0;
+    padding: 0.75rem; 
+    border-radius: var(--radius-md); 
+    margin: 0.5rem 0 1.25rem 0; 
+    text-align: center; 
+    font-size: 1rem; 
+    color: var(--math-main);
+    font-family: 'Cambria Math', 'Times New Roman', serif; /* Tipografía clásica para matemáticas */
+    font-style: italic;
+}
+.card-footer { display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; font-weight: 600; color: var(--math-accent); border-top: 1px solid var(--border); padding-top: 1rem; }
+
+/* --- LECCIÓN INDIVIDUAL --- */
+.container-lesson { max-width: 840px; margin: 3rem auto; padding: 0 1.5rem; }
+.lesson-content { 
+    background: var(--surface); 
+    border: 1px solid var(--border); 
+    border-radius: var(--radius-lg); 
+    padding: 3rem 4rem; 
+    box-shadow: var(--shadow-card); 
+}
+.breadcrumb { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 500;}
+.breadcrumb a { color: var(--math-accent); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--math-blue); }
+.lesson-title { font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem; letter-spacing: -0.04em; color: var(--text-main); line-height: 1.2; }
+
+/* Cajas de contenido matemático impactantes */
+.math-box { 
+    background: var(--math-blue-soft); 
+    border-left: 4px solid var(--math-accent); 
+    padding: 1.5rem 2rem; 
+    margin: 2rem 0; 
+    border-radius: 0 var(--radius-md) var(--radius-md) 0; 
+    font-size: 1.05rem;
+    color: var(--math-blue);
+}
+
+.exercise-box { 
+    background: #ffffff; 
+    border: 2px dashed #cbd5e1; 
+    padding: 2rem; 
+    border-radius: var(--radius-lg); 
+    margin: 2rem 0; 
+    position: relative;
+}
+.exercise-box::before {
+    content: 'EJERCICIO';
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background: white;
+    padding: 0 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 960px) {
+    .top-links { display: none; }
+    .container { grid-template-columns: 1fr; gap: 1.5rem;}
+    .lesson-content { padding: 2rem 1.5rem; }
+}

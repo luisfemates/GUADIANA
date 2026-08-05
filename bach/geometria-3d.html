@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometría en el Espacio</title>
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!-- JS Global (Carga automáticamente la cabecera, sidebar, footer y KaTeX) -->
+    <script defer src="../js/global.js"></script>
+</head>
+<body>
+
+    <!-- Contenedor general de 2 columnas -->
+    <div class="container">
+        
+        <!-- COLUMNA IZQUIERDA: El JS inyectará aquí el menú lateral -->
+        <div id="sidebar-container"></div>
+
+        <!-- COLUMNA DERECHA: Contenido principal de la lección -->
+        <main class="main-panel">
+            <article class="lesson-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Inicio</a> / <span>2º Bachillerato</span> / <strong>Geometría</strong>
+                </nav>
+
+                <h1 class="lesson-title">Ecuaciones de la Recta y el Plano en $\mathbb{R}^3$</h1>
+
+                <p>Una recta $r$ en el espacio queda determinada por un punto $P(x_0, y_0, z_0)$ y un vector director $\vec{v} = (v_1, v_2, v_3)$.</p>
+
+                <div class="math-box">
+                    <h3>Ecuaciones Continuas de la Recta</h3>
+                    $$\frac{x - x_0}{v_1} = \frac{y - y_0}{v_2} = \frac{z - z_0}{v_3}$$
+                    <h3>Ecuación General del Plano</h3>
+                    $$\pi: Ax + By + Cz + D = 0$$
+                    <p>Donde $\vec{n} = (A, B, C)$ es el vector normal (perpendicular) al plano.</p>
+                </div>
+
+                <h2>Ejercicios Resueltos</h2>
+
+                <div class="exercise-box">
+                    <p><strong>Ejercicio 1: Escribe la ecuación general del plano que pasa por el punto $P(1, 2, 3)$ y tiene como vector normal $\vec{n} = (2, -1, 4)$.</strong></p>
+                    
+                    <details class="solution-box">
+                        <summary>Solución paso a paso</summary>
+                        <div class="solution-content">
+                            <p>1. Usamos los componentes de $\vec{n}$ para $A, B, C$:</p>
+                            $$2x - y + 4z + D = 0$$
+                            <p>2. Sustituimos las coordenadas del punto $P(1, 2, 3)$ para hallar $D$:</p>
+                            $$2(1) - 2 + 4(3) + D = 0 \implies 2 - 2 + 12 + D = 0 \implies D = -12$$
+                            <div class="math-box">
+                                <p><strong>Ecuación del plano:</strong> $2x - y + 4z - 12 = 0$</p>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+            </article>
+        </main>
+
+    </div>
+
+</body>
+</html>

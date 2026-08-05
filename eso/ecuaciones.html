@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecuaciones de 2º Grado</title>
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!-- JS Global (Carga automáticamente la cabecera, sidebar, footer y KaTeX) -->
+    <script defer src="../js/global.js"></script>
+</head>
+<body>
+
+    <!-- Contenedor general de 2 columnas -->
+    <div class="container">
+        
+        <!-- COLUMNA IZQUIERDA: El JS inyectará aquí el menú lateral -->
+        <div id="sidebar-container"></div>
+
+        <!-- COLUMNA DERECHA: Contenido principal de la lección -->
+        <main class="main-panel">
+            <article class="lesson-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Inicio</a> / <span>3º ESO</span> / <strong>Álgebra</strong>
+                </nav>
+
+                <h1 class="lesson-title">Ecuaciones de 2º Grado: Teoría y Resolución</h1>
+
+                <p>Una ecuación de segundo grado, también conocida como ecuación cuadrática, es aquella en la que la mayor potencia de la incógnita es 2. Su forma general se expresa de la siguiente manera:</p>
+                
+                <div class="formula-preview">
+                    $ax^2 + bx + c = 0$
+                </div>
+
+                <p>Donde $a$, $b$ y $c$ son números reales (llamados coeficientes) y se debe cumplir siempre que $a \neq 0$, ya que de lo contrario sería una ecuación de primer grado.</p>
+
+                <h2>Tipos de Ecuaciones Cuadráticas</h2>
+                <p>Dependiendo de los coeficientes, podemos clasificar estas ecuaciones para aplicar el método de resolución más rápido:</p>
+                
+                <ol>
+                    <li><strong>Ecuación Completa:</strong> Todos los coeficientes son distintos de cero ($a \neq 0, b \neq 0, c \neq 0$). Se resuelven con la fórmula general.</li>
+                    <li><strong>Ecuación Incompleta (Falta la $x$):</strong> Ocurre cuando $b = 0$. La forma es $ax^2 + c = 0$. Se resuelve despejando directamente $x^2$.</li>
+                    <li><strong>Ecuación Incompleta (Falta el término independiente):</strong> Ocurre cuando $c = 0$. La forma es $ax^2 + bx = 0$. Se resuelve sacando factor común a la $x$.</li>
+                </ol>
+
+                <div class="math-box">
+                    <h3>La Fórmula General</h3>
+                    <p>Para resolver cualquier ecuación de segundo grado completa, utilizamos la fórmula que nos da directamente los valores de $x$:</p>
+                    $$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+                    <p><strong>Nota importante:</strong> El símbolo $\pm$ indica que, por lo general, obtendremos dos soluciones diferentes: una sumando la raíz y otra restándola.</p>
+                </div>
+
+                <h2>El Discriminante</h2>
+                <p>A la expresión que se encuentra dentro de la raíz cuadrada en la fórmula general se le llama <strong>discriminante</strong> y se representa con la letra griega delta mayúscula ($\Delta$). Este valor nos "discrimina" o avisa de cuántas soluciones reales tendrá la ecuación antes de terminar el cálculo.</p>
+
+                <div class="math-box">
+                    <strong>Discriminante:</strong> $$\Delta = b^2 - 4ac$$
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Valor del Discriminante ($\Delta$)</th>
+                            <th>Tipo de Solución</th>
+                            <th>Interpretación Gráfica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$\Delta > 0$ (Positivo)</td>
+                            <td>Dos soluciones reales y distintas.</td>
+                            <td>La parábola corta el eje X en dos puntos.</td>
+                        </tr>
+                        <tr>
+                            <td>$\Delta = 0$ (Cero)</td>
+                            <td>Una única solución real (solución doble).</td>
+                            <td>La parábola toca el eje X en un solo punto (vértice).</td>
+                        </tr>
+                        <tr>
+                            <td>$\Delta < 0$ (Negativo)</td>
+                            <td>Ninguna solución real (soluciones complejas).</td>
+                            <td>La parábola no llega a tocar el eje X.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Ejercicios Resueltos</h2>
+
+                <div class="exercise-box">
+                    <p><strong>Ejercicio 1: Resuelve la siguiente ecuación completa.</strong></p>
+                    <div class="formula-preview">
+                        $x^2 - 5x + 6 = 0$
+                    </div>
+                    
+                    <details class="solution-box">
+                        <summary>Solución paso a paso</summary>
+                        <div class="solution-content">
+                            <p>Primero identificamos los coeficientes:</p>
+                            <ul>
+                                <li>$a = 1$</li>
+                                <li>$b = -5$</li>
+                                <li>$c = 6$</li>
+                            </ul>
+                            <p>Aplicamos la fórmula general sustituyendo los valores:</p>
+                            $$x = \frac{-(-5) \pm \sqrt{(-5)^2 - 4 \cdot 1 \cdot 6}}{2 \cdot 1}$$
+                            $$x = \frac{5 \pm \sqrt{25 - 24}}{2}$$
+                            $$x = \frac{5 \pm \sqrt{1}}{2} = \frac{5 \pm 1}{2}$$
+                            <p>De aquí extraemos las dos posibles soluciones:</p>
+                            <div class="math-box">
+                                <ul>
+                                    <li><strong>Solución 1:</strong> $x_1 = \frac{5 + 1}{2} = \frac{6}{2} = 3$</li>
+                                    <li><strong>Solución 2:</strong> $x_2 = \frac{5 - 1}{2} = \frac{4}{2} = 2$</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="exercise-box">
+                    <p><strong>Ejercicio 2: Resuelve la siguiente ecuación incompleta.</strong></p>
+                    <div class="formula-preview">
+                        $2x^2 - 18 = 0$
+                    </div>
+                    
+                    <details class="solution-box">
+                        <summary>Solución paso a paso</summary>
+                        <div class="solution-content">
+                            <p>Como falta el término $b$ ($b=0$), no es necesario usar la fórmula general. Podemos despejar la $x$ directamente:</p>
+                            $$2x^2 = 18$$
+                            <p>Pasamos el 2 dividiendo al otro lado:</p>
+                            $$x^2 = \frac{18}{2}$$
+                            $$x^2 = 9$$
+                            <p>Para despejar el cuadrado, aplicamos la raíz cuadrada a ambos lados (recordando incluir el signo $\pm$):</p>
+                            $$x = \pm\sqrt{9}$$
+                            <div class="math-box">
+                                <p><strong>Las dos soluciones son:</strong> $x_1 = 3$ y $x_2 = -3$</p>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+            </article>
+        </main>
+
+    </div>
+
+</body>
+</html>

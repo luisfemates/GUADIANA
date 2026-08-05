@@ -1,0 +1,722 @@
+:root {
+    /* Paleta de Alto Impacto / Swiss Graphic Light */
+    --bg-page: #f4f6fb;
+    --surface: rgba(255, 255, 255, 0.92);
+    --surface-alt: #edf2fa;
+    
+    --text-main: #0b132b;
+    --text-muted: #5a6578;
+    
+    /* Gradientes & Colores de Marca */
+    --math-primary: #3a5ccc;
+    --math-accent: #6366f1;
+    --math-glow: #ec4899;
+    --math-teal: #0d9488;
+    
+    --math-blue-soft: #eef2ff;
+    --amber-soft: #fff7ed;
+    --purple-soft: #f0fdf4;
+    
+    --border: #dbe3f0;
+    --border-bright: #a5b4fc;
+    
+    --radius-lg: 20px;
+    --radius-md: 12px;
+    
+    /* Sombras 3D */
+    --shadow-card: 0 10px 30px -5px rgba(11, 19, 43, 0.05), 0 4px 12px -2px rgba(11, 19, 43, 0.03);
+    --shadow-hover: 0 20px 40px -10px rgba(99, 102, 241, 0.25), 0 0 20px 0 rgba(236, 72, 153, 0.15);
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* --- ANIMACIONES GLOBALES --- */
+@keyframes breathing-lights {
+    0% { background-position: 0% 0%, 100% 100%, 0 0, 0 0; }
+    50% { background-position: 15% 20%, 85% 80%, 0 0, 0 0; }
+    100% { background-position: 0% 0%, 100% 100%, 0 0, 0 0; }
+}
+
+@keyframes gradient-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse-dot {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-page);
+    
+    /* Fondo con luces de neón dinámicas que "respiran" */
+    background-image: 
+        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(236, 72, 153, 0.12) 0%, transparent 40%),
+        linear-gradient(to right, rgba(219, 227, 240, 0.5) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(219, 227, 240, 0.5) 1px, transparent 1px);
+    background-size: 130% 130%, 130% 130%, 32px 32px, 32px 32px;
+    animation: breathing-lights 25s ease-in-out infinite;
+    
+    color: var(--text-main);
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- CABECERA CRISTALINA --- */
+.header-education {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.80);
+    backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid rgba(219, 227, 240, 0.8);
+    box-shadow: 0 4px 20px rgba(11, 19, 43, 0.03);
+}
+
+.top-bar {
+    background: linear-gradient(90deg, #0b132b 0%, #1c2541 100%);
+    color: #e2e8f0;
+    font-size: 0.78rem;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+.top-bar-container { 
+    max-width: 1280px; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.status-dot {
+    width: 8px; 
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%; 
+    display: inline-block;
+    box-shadow: 0 0 10px #10b981;
+    animation: pulse-dot 2s infinite;
+}
+
+.top-links { display: flex; gap: 1.5rem; }
+.top-links a { color: #94a3b8; text-decoration: none; transition: color 0.2s; }
+.top-links a:hover { color: #ffffff; text-shadow: 0 0 8px rgba(255,255,255,0.5); }
+
+.main-header { padding: 1rem 1.5rem; }
+.header-container { 
+    max-width: 1280px; 
+    margin: 0 auto; 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 1.5rem; 
+}
+
+.logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 1rem; 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+.logo-icon {
+    width: 48px; 
+    height: 48px;
+    background: linear-gradient(135deg, var(--math-accent), var(--math-glow));
+    color: white; 
+    border-radius: var(--radius-md);
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 1.3rem; 
+    font-weight: 900;
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+    transform: rotate(-3deg);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.logo:hover .logo-icon { transform: rotate(0deg) scale(1.08); }
+
+.brand-name {
+    font-size: 1.4rem; 
+    font-weight: 900; 
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #0b132b 0%, #3a5ccc 50%, #0b132b 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex; 
+    align-items: center; 
+    gap: 0.6rem;
+    animation: gradient-flow 6s linear infinite;
+}
+
+.brand-tag {
+    font-size: 0.65rem; 
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(236, 72, 153, 0.15));
+    color: var(--math-accent); 
+    padding: 0.25rem 0.60rem; 
+    border-radius: 20px;
+    font-weight: 800; 
+    text-transform: uppercase; 
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.brand-sub { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; }
+
+.header-actions { display: flex; align-items: center; gap: 0.85rem; }
+
+.btn-header {
+    display: inline-flex; 
+    align-items: center; 
+    gap: 0.5rem;
+    padding: 0.65rem 1.35rem; 
+    border-radius: var(--radius-md);
+    font-size: 0.88rem; 
+    font-weight: 800; 
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline { 
+    background: var(--surface); 
+    border: 2px solid var(--border); 
+    color: var(--text-main); 
+}
+.btn-outline:hover { 
+    border-color: var(--math-accent); 
+    color: var(--math-accent); 
+    transform: translateY(-2px); 
+}
+.btn-outline:active { transform: scale(0.96); }
+
+.btn-fill { 
+    background: linear-gradient(135deg, var(--math-primary), var(--math-accent)); 
+    background-size: 150% auto; 
+    border: none; 
+    color: white; 
+    box-shadow: 0 4px 15px rgba(58, 92, 204, 0.35);
+}
+.btn-fill:hover { 
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5); 
+    transform: translateY(-2px);
+    background-position: right center;
+}
+.btn-fill:active { transform: scale(0.96); }
+
+/* --- LAYOUT Y SIDEBAR --- */
+.container { 
+    max-width: 1280px; 
+    margin: 3rem auto; 
+    padding: 0 1.5rem; 
+    display: grid; 
+    grid-template-columns: 310px 1fr; 
+    gap: 2.5rem; 
+}
+
+.sidebar {
+    background: var(--surface); 
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border); 
+    border-radius: var(--radius-lg);
+    padding: 1.5rem; 
+    box-shadow: var(--shadow-card);
+}
+
+.sidebar-header {
+    font-size: 1rem; 
+    font-weight: 800; 
+    margin-bottom: 1.5rem; 
+    padding-bottom: 0.85rem;
+    border-bottom: 2px solid var(--surface-alt); 
+    color: var(--text-main); 
+    letter-spacing: -0.01em;
+}
+
+/* Configuraciones generales de los desplegables (sidebar) */
+details {
+    border: 1px solid var(--border); 
+    border-radius: var(--radius-md);
+    background: #ffffff; 
+    margin-bottom: 0.75rem; 
+    overflow: hidden; 
+    transition: all 0.25s ease;
+}
+
+details[open] { 
+    border-color: var(--border-bright); 
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.08); 
+}
+
+summary {
+    padding: 0.9rem 1.1rem; 
+    font-weight: 700; 
+    font-size: 0.92rem; 
+    cursor: pointer;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    user-select: none; 
+    transition: background 0.2s;
+}
+
+summary:hover { background: var(--math-blue-soft); color: var(--math-primary); }
+
+/* Solo aplicamos la rotación del símbolo "+" al sidebar */
+.sidebar details summary::after { 
+    content: "+"; 
+    font-size: 1.2rem; 
+    font-weight: 800; 
+    color: var(--math-accent); 
+    transition: transform 0.25s; 
+}
+.sidebar details[open] summary::after { transform: rotate(45deg); }
+
+.topic-links { 
+    list-style: none; 
+    padding: 0.5rem; 
+    background-color: var(--surface-alt); 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.25rem; 
+}
+
+.topic-links a {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    padding: 0.6rem 0.85rem; 
+    color: var(--text-muted); 
+    text-decoration: none;
+    font-size: 0.87rem; 
+    font-weight: 600; 
+    border-radius: 8px; 
+    transition: all 0.2s;
+}
+
+.topic-links a:hover { 
+    background-color: var(--surface); 
+    color: var(--math-primary); 
+    transform: translateX(4px); 
+}
+
+.tag-micro { font-size: 0.68rem; padding: 0.2rem 0.5rem; border-radius: 6px; font-weight: 800; }
+.tag-alg { background: #fce7f3; color: #be185d; }
+.tag-geo { background: #e0f2fe; color: #0369a1; }
+.tag-ana { background: #fef3c7; color: #b45309; }
+
+/* --- PANEL PRINCIPAL Y BANNER --- */
+.main-panel { display: flex; flex-direction: column; gap: 2rem; }
+
+.notice-board {
+    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+    border: 2px solid #fed7aa; 
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1.75rem; 
+    display: flex; 
+    align-items: flex-start; 
+    gap: 1.25rem;
+    box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.1);
+    position: relative; 
+    overflow: hidden;
+    cursor: default;
+}
+
+.notice-board::after {
+    content: '∑'; 
+    position: absolute; 
+    right: -10px; 
+    bottom: -30px;
+    font-size: 8rem; 
+    font-weight: 900; 
+    color: rgba(249, 115, 22, 0.08);
+    pointer-events: none; 
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.notice-board:hover::after { transform: scale(1.15) rotate(-5deg); }
+
+.notice-icon { 
+    font-size: 1.5rem; 
+    background: #ffffff; 
+    padding: 0.6rem; 
+    border-radius: var(--radius-md); 
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.15); 
+}
+
+.notice-content h2 { font-size: 1.15rem; font-weight: 800; color: #9a3412; margin-bottom: 0.25rem; }
+.notice-content p { font-size: 0.92rem; color: #c2410c; font-weight: 500; }
+
+.section-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-card);
+}
+
+.section-header { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    margin-bottom: 1.75rem; 
+    padding-bottom: 0.85rem; 
+    border-bottom: 2px solid var(--border); 
+}
+
+.section-title { font-size: 1.45rem; font-weight: 900; letter-spacing: -0.02em; color: var(--text-main); }
+
+/* --- TARJETAS DIDÁCTICAS (Glass + Borde Mágico) --- */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; }
+
+.edu-card {
+    background: var(--surface);
+    backdrop-filter: blur(8px);
+    border: 2px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.edu-card::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: calc(var(--radius-lg) + 1px);
+    background: linear-gradient(135deg, var(--math-primary), var(--math-glow), var(--math-accent));
+    background-size: 200% 200%;
+    animation: gradient-flow 3s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.edu-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    border-color: transparent;
+    box-shadow: var(--shadow-hover);
+}
+
+.edu-card:hover::before { opacity: 1; }
+
+.card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; }
+
+.badge-level { 
+    font-size: 0.72rem; 
+    font-weight: 800; 
+    padding: 0.35rem 0.75rem; 
+    border-radius: 20px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.04em; 
+}
+
+.level-eso { background: #e0e7ff; color: #3730a3; }
+.level-bach { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
+
+.time-read { font-size: 0.78rem; color: var(--text-muted); font-weight: 600; }
+
+.edu-card h3 { 
+    font-size: 1.15rem; 
+    font-weight: 800; 
+    margin-bottom: 0.5rem; 
+    line-height: 1.35; 
+    color: var(--text-main); 
+    transition: color 0.2s; 
+}
+
+.edu-card:hover h3 { color: var(--math-primary); }
+.edu-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem; font-weight: 500; }
+
+/* Previsualización visual de fórmula adaptativa */
+.formula-preview { 
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); 
+    color: #a5b4fc;
+    padding: 0.85rem; 
+    border-radius: var(--radius-md); 
+    margin: 0.5rem 0 1.25rem 0; 
+    text-align: center; 
+    font-size: 1.1rem; 
+    font-weight: 800;
+    font-family: 'KaTeX_Main', 'Cambria Math', serif; 
+    letter-spacing: 0.05em;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2); 
+    text-shadow: 0 0 10px rgba(165, 180, 252, 0.4);
+    
+    /* Control de desbordamiento y saltos de línea */
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    height: auto;
+    overflow-x: auto;
+    
+    scrollbar-width: thin;
+    scrollbar-color: var(--math-accent) transparent;
+}
+
+/* Pie de tarjeta */
+.card-footer { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    font-size: 0.88rem; 
+    font-weight: 800; 
+    color: var(--math-accent); 
+    border-top: 2px solid var(--surface-alt); 
+    padding-top: 1rem; 
+    transition: text-shadow 0.3s;
+}
+
+.card-footer > *:last-child,
+.card-footer svg,
+.card-footer span {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.edu-card:hover .card-footer { 
+    text-shadow: 0 0 12px rgba(99, 102, 241, 0.4); 
+}
+
+.edu-card:hover .card-footer > *:last-child,
+.edu-card:hover .card-footer svg {
+    transform: translateX(6px);
+}
+
+/* --- VISTA DE LECCIÓN / ARTÍCULO --- */
+.container-lesson { max-width: 920px; margin: 3rem auto; padding: 0 1.5rem; }
+
+.lesson-content { 
+    background: var(--surface); 
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border); 
+    border-radius: var(--radius-lg); 
+    padding: 3.5rem 3rem; 
+    box-shadow: var(--shadow-card); 
+}
+
+.breadcrumb { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 600; }
+.breadcrumb a { color: var(--math-primary); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+.lesson-title { 
+    font-size: 2.6rem; 
+    font-weight: 900; 
+    margin-bottom: 2rem; 
+    letter-spacing: -0.03em; 
+    line-height: 1.15;
+    background: linear-gradient(135deg, #0b132b 0%, #3a5ccc 50%, #0b132b 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    animation: gradient-flow 6s linear infinite;
+}
+
+/* Destacado Teorema con ajuste de tamaño automático */
+.math-box { 
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%); 
+    border-left: 6px solid var(--math-accent); 
+    border-radius: var(--radius-md);
+    padding: 1.75rem 2rem; 
+    margin: 2rem 0; 
+    font-size: 1.1rem; 
+    font-weight: 700;
+    color: #1e1b4b; 
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.08);
+    
+    /* Control de desbordamiento en lecciones */
+    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow-x: auto;
+}
+
+.exercise-box { 
+    background: #ffffff; 
+    border: 2px solid var(--math-teal); 
+    padding: 1.75rem 2rem; 
+    border-radius: var(--radius-lg); 
+    margin: 2rem 0; 
+    box-shadow: 0 10px 25px -5px rgba(13, 148, 136, 0.12); 
+    position: relative;
+}
+
+.exercise-box::before {
+    content: 'PRACTICA Y RESUELVE'; 
+    position: absolute; 
+    top: -12px; 
+    left: 20px;
+    background: var(--math-teal); 
+    color: white; 
+    font-size: 0.68rem; 
+    font-weight: 900;
+    padding: 0.2rem 0.75rem; 
+    border-radius: 12px; 
+    letter-spacing: 0.08em;
+}
+
+/* =======================================================
+   ESTILOS PREMIUM: TABLAS Y LISTAS EN LECCIONES
+   ======================================================= */
+
+.lesson-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 1.5rem 0;
+}
+
+.lesson-content ul li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 0.85rem;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.lesson-content ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--math-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
+}
+
+.lesson-content table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 2.5rem 0;
+    background: #ffffff;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 10px 30px -10px rgba(11, 19, 43, 0.1);
+    border: 1px solid var(--border);
+}
+
+.lesson-content th {
+    background: var(--math-primary);
+    color: #ffffff;
+    text-align: left;
+    padding: 1.15rem 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}
+
+.lesson-content td {
+    padding: 1.15rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-main);
+}
+
+.lesson-content tr:last-child td {
+    border-bottom: none;
+}
+
+.lesson-content tbody tr {
+    transition: background-color 0.2s;
+}
+
+.lesson-content tbody tr:hover {
+    background-color: var(--surface-alt);
+}
+
+/* =======================================================
+   DESPLEGABLE: VER SOLUCIÓN PASO A PASO
+   ======================================================= */
+
+.solution-box {
+    background: #ffffff;
+    border: 2px dashed var(--math-teal);
+    border-radius: var(--radius-md);
+    margin: 2rem 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.solution-box[open] {
+    border-style: solid;
+    box-shadow: 0 8px 25px rgba(13, 148, 136, 0.15);
+}
+
+.solution-box > summary {
+    background: rgba(13, 148, 136, 0.04);
+    color: var(--math-teal);
+    padding: 1.15rem 1.5rem;
+    font-weight: 800;
+    font-size: 1.05rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s;
+}
+
+.solution-box > summary::-webkit-details-marker {
+    display: none;
+}
+
+.solution-box > summary:hover {
+    background: rgba(13, 148, 136, 0.08);
+}
+
+.solution-box > summary::after {
+    content: '👀 Ver solución';
+    font-size: 0.85rem;
+    background: var(--math-teal);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 10px rgba(13, 148, 136, 0.3);
+    transform: none; /* Asegura que el texto no herede giros extraños */
+}
+
+.solution-box[open] > summary::after {
+    content: '✕ Ocultar';
+    background: #ef4444;
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+    transform: none; /* Asegura que el texto no herede giros extraños al abrir */
+}
+
+.solution-content {
+    padding: 1.75rem;
+    border-top: 1px solid rgba(13, 148, 136, 0.15);
+    background: #f8fafc;
+    
+    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow-x: auto;
+}
+
+/* =======================================================
+   RESPONSIVE
+   ======================================================= */
+@media (max-width: 960px) {
+    .top-links { display: none; }
+    .container { grid-template-columns: 1fr; }
+    .lesson-content { padding: 2rem 1.5rem; }
+}

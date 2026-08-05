@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones Lineales</title>
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!-- JS Global (Carga automáticamente la cabecera, sidebar, footer y KaTeX) -->
+    <script defer src="../js/global.js"></script>
+</head>
+<body>
+
+    <!-- Contenedor general de 2 columnas -->
+    <div class="container">
+        
+        <!-- COLUMNA IZQUIERDA: El JS inyectará aquí el menú lateral -->
+        <div id="sidebar-container"></div>
+
+        <!-- COLUMNA DERECHA: Contenido principal de la lección -->
+        <main class="main-panel">
+            <article class="lesson-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Inicio</a> / <span>3º y 4º ESO</span> / <strong>Análisis</strong>
+                </nav>
+
+                <h1 class="lesson-title">Funciones Lineales y Afines</h1>
+
+                <p>Una función lineal es una relación entre dos variables cuya gráfica en el plano cartesiano es siempre una línea recta. Su expresión analítica general es:</p>
+                
+                <div class="formula-preview">
+                    $y = mx + n$
+                </div>
+
+                <p>Donde $x$ es la variable independiente, $y$ es la variable dependiente, $m$ es la <strong>pendiente</strong> y $n$ es la <strong>ordenada en el origen</strong>.</p>
+
+                <h2>Elementos de la Recta</h2>
+                <ol>
+                    <li><strong>Pendiente ($m$):</strong> Indica la inclinación de la recta. Si $m > 0$ la función es creciente, si $m < 0$ es decreciente y si $m = 0$ es una recta horizontal.</li>
+                    <li><strong>Ordenada en el origen ($n$):</strong> Es el punto $(0, n)$ donde la recta corta al eje vertical $Y$.</li>
+                </ol>
+
+                <div class="math-box">
+                    <h3>Cálculo de la Pendiente</h3>
+                    <p>Dados dos puntos por los que pasa la recta, $A(x_1, y_1)$ y $B(x_2, y_2)$, la pendiente se calcula mediante la fórmula:</p>
+                    $$m = \frac{y_2 - y_1}{x_2 - x_1}$$
+                </div>
+
+                <h2>Ejercicios Resueltos</h2>
+
+                <div class="exercise-box">
+                    <p><strong>Ejercicio 1: Halla la ecuación de la recta que pasa por los puntos $A(1, 3)$ y $B(3, 7)$.</strong></p>
+                    
+                    <details class="solution-box">
+                        <summary>Solución paso a paso</summary>
+                        <div class="solution-content">
+                            <p>1. Calculamos primero la pendiente $m$:</p>
+                            $$m = \frac{7 - 3}{3 - 1} = \frac{4}{2} = 2$$
+                            <p>2. Sustituimos $m = 2$ y las coordenadas de uno de los puntos (por ejemplo $A(1,3)$) en $y = mx + n$ para hallar $n$:</p>
+                            $$3 = 2(1) + n \implies 3 = 2 + n \implies n = 1$$
+                            <div class="math-box">
+                                <p><strong>Ecuación final de la recta:</strong> $y = 2x + 1$</p>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
+            </article>
+        </main>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario PAU | MathAula</title>
+
+    <!-- CSS Global -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!-- JS Global (Carga automáticamente la cabecera, sidebar, footer y KaTeX) -->
+    <script defer src="../js/global.js"></script>
+</head>
+<body>
+
+    <!-- Contenedor general de 2 columnas -->
+    <div class="container">
+        
+        <!-- COLUMNA IZQUIERDA: El JS inyectará aquí el menú lateral -->
+        <div id="sidebar-container"></div>
+
+        <!-- COLUMNA DERECHA: Contenido principal de la lección -->
+        <main class="main-panel">
+            <article class="lesson-content">
+                <nav class="breadcrumb">
+                    <a href="../index.html">Inicio</a> / <span>Extra</span> / <strong>Formulario PAU</strong>
+                </nav>
+
+                <h1 class="lesson-title">Formulario Completo para la PAU / Selectividad</h1>
+
+                <p>Resumen de las fórmulas más importantes de Álgebra, Análisis y Geometría necesarias para superar las pruebas de acceso a la universidad.</p>
+
+                <h2>1. Análisis y Cálculo</h2>
+                <div class="math-box">
+                    <p><strong>Regla de Barrow (Integrales Definidas):</strong></p>
+                    $$\int_a^b f(x) \, dx = [F(x)]_a^b = F(b) - F(a)$$
+                    <p><strong>Derivada de un producto y cociente:</strong></p>
+                    $$(u \cdot v)' = u'v + uv' \quad | \quad \left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$$
+                </div>
+
+                <h2>2. Geometría 3D</h2>
+                <div class="math-box">
+                    <p><strong>Distancia de un punto $P(x_0,y_0,z_0)$ a un plano $\pi: Ax+By+Cz+D=0$:</strong></p>
+                    $$d(P, \pi) = \frac{|A x_0 + B y_0 + C z_0 + D|}{\sqrt{A^2 + B^2 + C^2}}$$
+                </div>
+
+            </article>
+        </main>
+
+    </div>
+
+</body>
+</html>
