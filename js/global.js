@@ -1,13 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 0. VISTA RESPONSIVA ADAPTABLE
+    // 0.FORZAR VISTA DE ESCRITORIO EN MÓVILES (En un solo lugar)
+(function() {
     let metaViewport = document.querySelector('meta[name="viewport"]');
     if (!metaViewport) {
         metaViewport = document.createElement('meta');
         metaViewport.name = 'viewport';
-        metaViewport.content = 'width=device-width, initial-scale=1.0';
         document.head.appendChild(metaViewport);
     }
+    // Asigna el ancho fijo de PC (puedes cambiar 1200 por 980 si lo ves muy alejado)
+    metaViewport.content = 'width=980';
+})();
 
     // 1. Detección segura de subcarpetas (/eso/, /bach/, /extra/)
     const path = window.location.pathname.replace(/\\/g, '/');
